@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+<ul>
+    {% for m in menu %}
+    <li>
+        <a href="{% url m.url_name %}">{{ m.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<h1>Главная страница</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit">Отправить</button> </p>
+</form>
+</body>
+</html>
